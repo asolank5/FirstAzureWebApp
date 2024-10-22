@@ -61,5 +61,5 @@ jobs:
         with:
           app-name: 'webapp-sam45027313'
           slot-name: 'Production'
-          package: ./output
+          package: './output/**'
           
