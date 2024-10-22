@@ -27,6 +27,9 @@ jobs:
       - name: dotnet publish
         run: dotnet publish webapp-sam-lab13.csproj -c Release -o ./output  
 
+      - name: List published files
+        run: dir ./output  # List files in the output directory
+      
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
@@ -47,6 +50,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: .net-app
+
+      - name: List downloaded files
+        run: dir .  # Check the current directory after downloading
       
       - name: Login to Azure
         uses: azure/login@v2
